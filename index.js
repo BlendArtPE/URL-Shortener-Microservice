@@ -49,12 +49,7 @@ app.post("/api/shorturl", function (req, res) {
   } else {
     res.json({ error: "invalid url" });
   }
-});
-
-app.get("/api/shorturl", (req, res) => {
-  const obtenerUrl = diccionarioUrls[contador];
-  res.json({ original_url: obtenerUrl, short_url: contador });
-});
+})
 
 app.get("/api/shorturl/:idUrl", (req, res) => {
   const obtenerUrl = diccionarioUrls[req.params.idUrl];
